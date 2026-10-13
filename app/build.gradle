@@ -1,0 +1,26 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'ro.player.audio'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'ro.player.audio'
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // semnat cu cheia de debug ca să se poată instala direct
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
